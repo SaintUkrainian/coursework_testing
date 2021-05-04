@@ -11,33 +11,38 @@ class CalculatorTest {
   static Calculator calculator;
 
   @BeforeAll
-  public static void init() {
+  static void init() {
     calculator = new Calculator();
   }
 
   @AfterAll
-  public static void cleanup() {
+  static void cleanup() {
     calculator = null;
   }
 
   @Test
-  public void shouldReturnSumOfTwoNumbers() {
+  void shouldReturnSumOfTwoNumbers() {
     assertEquals(4, calculator.sum(2, 2));
   }
 
   @Test
-  public void shouldReturnDivisionOfTwoNumbers() {
+  void shouldReturnDivisionOfTwoNumbers() {
     assertEquals(1, calculator.divide(2, 2));
   }
 
   @Test
-  public void shouldReturnSubtractionOfTwoNumbers() {
+  void shouldReturnSubtractionOfTwoNumbers() {
     assertEquals(0, calculator.subtract(2, 2));
   }
 
   @Test
-  public void shouldReturnMultiplicationOfTwoNumbers() {
+  void shouldReturnMultiplicationOfTwoNumbers() {
     assertEquals(4, calculator.multiply(2, 2));
+  }
+
+  @Test
+  void shouldThrowExceptionWhenDividingByZero() {
+    assertThrows(ArithmeticException.class, () -> calculator.divide(4, 0));
   }
 
 }
