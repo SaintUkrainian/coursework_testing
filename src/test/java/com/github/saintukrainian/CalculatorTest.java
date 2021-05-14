@@ -22,27 +22,64 @@ class CalculatorTest {
 
   @Test
   void shouldReturnSumOfTwoNumbers() {
-    assertEquals(4, calculator.sum(2, 2));
+    // given
+    double a = 1.539;
+    double b = 2.193;
+
+    // when
+    double result = calculator.sum(a, b);
+
+    // then
+    assertEquals(3.732, result);
   }
 
   @Test
   void shouldReturnDivisionOfTwoNumbers() {
-    assertEquals(1, calculator.divide(2, 2));
+    // given
+    int a = 2;
+    int b = 2;
+
+    // when
+    double result = calculator.divide(a, b);
+
+    // then
+    assertEquals(1, result);
   }
 
   @Test
   void shouldReturnSubtractionOfTwoNumbers() {
-    assertEquals(0, calculator.subtract(2, 2));
+    // given
+    int a = 2;
+    int b = 2;
+
+    // when
+    double result = calculator.subtract(a, b);
+
+    // then
+    assertEquals(0, result);
   }
 
   @Test
   void shouldReturnMultiplicationOfTwoNumbers() {
-    assertEquals(4, calculator.multiply(2, 2));
+    // given
+    int a = 2;
+    int b = 2;
+
+    // when
+    double result = calculator.multiply(a, b);
+
+    // then
+    assertEquals(4, result);
   }
 
   @Test
   void shouldThrowExceptionWhenDividingByZero() {
-    assertThrows(ArithmeticException.class, () -> calculator.divide(4, 0));
+    // given
+    int a = 4;
+    int b = 0;
+
+    // then
+    assertThrows(ArithmeticException.class, () -> calculator.divide(a, b));
   }
 
 }
