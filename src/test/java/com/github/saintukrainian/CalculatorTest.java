@@ -82,4 +82,51 @@ class CalculatorTest {
     assertThrows(ArithmeticException.class, () -> calculator.divide(a, b));
   }
 
+  @Test
+  void shouldReturnTgValue() {
+    // given
+    double x = 1.2;
+
+    // when
+    double result = calculator.tg(x);
+
+    // then
+    assertEquals(2.5721516221263188, result);
+  }
+
+  @Test
+  void shouldReturnCtgValue() {
+    // given
+    double x = 1.32;
+
+    // when
+    double result = calculator.ctg(x);
+
+    // then
+    assertEquals(0.25619034081545183, result);
+  }
+
+  @Test
+  void shouldReturnSinValue() {
+    // given
+    double x = 1.49;
+    // when
+    double result = calculator.sin(x);
+
+    // then
+    assertEquals(0.9967377520431434, result);
+  }
+
+  @Test
+  void shouldReturnCosValue() {
+    // given
+    double x = -1.453;
+
+    // when
+    double result = calculator.cos(x);
+
+    // then
+    assertEquals(0.11752409259940473, result);
+  }
+
 }

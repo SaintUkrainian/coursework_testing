@@ -20,4 +20,20 @@ public class Calculator {
     }
     return a / b;
   }
+
+  public double sin(double x) {
+    return Math.sin(x);
+  }
+
+  public double cos(double x) {
+    return Math.cos(x);
+  }
+
+  public double tg(double x) {
+    return Math.tan(x);
+  }
+
+  public double ctg(double x) {
+    return 1.0 / Math.tan(x);
+  }
 }
